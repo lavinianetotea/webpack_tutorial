@@ -1,0 +1,36 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "webpack_tutorial",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laviniatrufan/webpack_tutorial.git"
+  },
+  "author": "lavinia.netotea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laviniatrufan/webpack_tutorial/issues"
+  },
+  "homepage": "https://github.com/laviniatrufan/webpack_tutorial#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
