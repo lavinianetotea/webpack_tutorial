@@ -1,0 +1,6 @@
+.btn-link,
+    .btn-link:hover,
+    .btn-link:focus,
+    .btn-link:active {
+        color: darkslategrey;
+    }
