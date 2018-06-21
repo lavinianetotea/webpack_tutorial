@@ -6,7 +6,7 @@ class MachinesList extends Component {
         super();
 
         this.state = {
-            productsTab: '',
+            productsTab: 'active',
             infoTab: '',
             productsTabStyle: {
                 color: "#7a6aeb",
@@ -106,6 +106,8 @@ class MachinesList extends Component {
 
     render() {
         const {customerMachines} = this.props;
+        const {name, email, companyEmail, phoneNumber, company, marketSector, city, country, address, numberOfEmployees} = this.props.customers;
+        console.log(this.props.customers);
         return (
             <div>
                 <ul className="nav nav-tabs">
@@ -138,13 +140,67 @@ class MachinesList extends Component {
                 </ul>
 
                 <div className="tab-content">
-                    <div id="products" className="tab-pane active">
+                    <div id="products" className={`tab-pane ${this.state.productsTab}`}>
                         {this.displayCustomerProducts(customerMachines)}
                     </div>
-                </div>
 
-                <div id="info" className="tab-pane">
 
+                    <div id="info" className={`tab-pane ${this.state.infoTab}`}>
+                        <div className="row">
+                            <div className="col-6">
+                                <table className="table table-borderless">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Name</th>
+                                        <td>{name}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email</th>
+                                        <td>{email}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Company email</th>
+                                        <td colSpan="2">{companyEmail}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Phone number</th>
+                                        <td colSpan="2">{phoneNumber}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Company</th>
+                                        <td colSpan="2">{company}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="col-6">
+                                <table className="table table-borderless">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Market sector</th>
+                                        <td>{marketSector}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">City</th>
+                                        <td>{city}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Country</th>
+                                        <td colSpan="2">{country}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Address</th>
+                                        <td colSpan="2">{address}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Number of employees</th>
+                                        <td colSpan="2">{numberOfEmployees}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

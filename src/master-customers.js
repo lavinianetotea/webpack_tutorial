@@ -13,8 +13,13 @@ class MasterCustomers extends Component {
                     name: "John Nicolae",
                     email: "helpdesk@fluids.com",
                     companyEmail: "helpdesk@fluids.com",
+                    phoneNumber: '02072911690',
                     company: "Fluids Dynamics",
                     marketSector: "Engineering",
+                    city: 'London',
+                    country: 'United Kingdom',
+                    address: 'Chancery House, 52-46 Chancery Lane',
+                    numberOfEmployees: '51-100',
                     products: [
                         {
                             serialNumber: "SYN170000128",
@@ -52,8 +57,13 @@ class MasterCustomers extends Component {
                     name: "Dominic Bolger",
                     email: "helpdesk@ccyoung.co.uk",
                     companyEmail: "helpdesk@ccyoung.co.uk",
+                    phoneNumber: '02072911690',
                     company: "CC Young & Co",
                     marketSector: "Financial",
+                    city: 'London',
+                    country: 'United Kingdom',
+                    address: 'Chancery House, 52-46 Chancery Lane',
+                    numberOfEmployees: '51-100',
                     products: [
                         {
                             serialNumber: "ABC170000128",
@@ -91,8 +101,13 @@ class MasterCustomers extends Component {
                     name: "John Smith",
                     email: "helpdesk@fluids.com",
                     companyEmail: "helpdesk@fluids.com",
+                    phoneNumber: '',
                     company: "Fluids Dynamics",
                     marketSector: "Engineering",
+                    city: '',
+                    country: '',
+                    address: '',
+                    numberOfEmployees: '',
                     products: [
                         {
                             serialNumber: "SYN170000128",
@@ -130,8 +145,13 @@ class MasterCustomers extends Component {
                     name: "Dominic Bolger",
                     email: "helpdesk@ccyoung.co.uk",
                     companyEmail: "helpdesk@ccyoung.co.uk",
+                    phoneNumber: '',
                     company: "CC Young & Co",
                     marketSector: "Financial",
+                    city: '',
+                    country: '',
+                    address: '',
+                    numberOfEmployees: '',
                     products: [
                         {
                             serialNumber: "SYN170000128",
@@ -170,8 +190,13 @@ class MasterCustomers extends Component {
                     name: "Laura Gaura",
                     email: "laura.gaura@yahoo.com",
                     companyEmail: "inst_sanit@yahoo.com",
+                    phoneNumber: '',
                     company: "LauraInstal",
                     marketSector: "Instalatii Sanitare",
+                    city: '',
+                    country: '',
+                    address: '',
+                    numberOfEmployees: '',
                     products: []
                 }
             ],
@@ -220,7 +245,7 @@ class MasterCustomers extends Component {
                             <Customers customers={this.getCustomers()}
                                        displayMachinesFromParent={this.displayMachines}/>
                             <div style={{display: this.state.displayMachineContainer}}>
-                                <MachinesList customerMachines={this.state.displayCustomerProducts}/>
+                                <MachinesList customers={customers} customerMachines={this.state.displayCustomerProducts}/>
                             </div>
                         </div>
                     </div>

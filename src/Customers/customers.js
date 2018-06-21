@@ -5,7 +5,10 @@ class Customers extends Component {
         super();
 
         this.state = {
-            customerProducts: []
+            customerProducts: [],
+            customerDetails: {
+
+            }
         };
     }
 
@@ -19,6 +22,7 @@ class Customers extends Component {
             (customer, index) =>
                 <tr key={index} onClick={() => {
                     this.getCustomerProducts(customer.products);
+                    this.getCustomerDetails(customer)
                 }}>
                     <td>{customer.name}</td>
                     <td>{customer.email}</td>
