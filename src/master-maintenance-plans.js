@@ -65,17 +65,24 @@ class MasterMaintenancePlans extends Component {
                     createdOn: "31/09/2017, 03:52 AM"
                 }
             ],
-            searchResultsFromSearch: null
+            searchResultsFromSearch: null,
+            isInputSearchEmpty: true
         };
         this.someFn = this.someFn.bind(this);
+        this.emptyInputSearch = this.emptyInputSearch.bind(this);
     }
 
     someFn(dataCollectionFromChild) {
         this.setState({searchResultsFromSearch: dataCollectionFromChild});
     }
 
+    emptyInputSearch(dataFromChild) {
+        this.setState({isInputSearchEmpty: dataFromChild});
+        this.setState({searchResultsFromSearch: null});
+    }
+
     getMaintenancePlans() {
-        return this.state.searchResultsFromSearch === null ? this.state.maintenancePlans : this.state.searchResultsFromSearch;
+        return this.state.searchResultsFromSearch === null || this.state.isInputSearchEmpty === true ? this.state.maintenancePlans : this.state.searchResultsFromSearch;
     }
 
     render() {
@@ -87,7 +94,8 @@ class MasterMaintenancePlans extends Component {
                     <div className="col-2"></div>
                     <div style={{borderRadius: '0'}} className="card col-8 mt-3">
                         <div className="card-body">
-                            <Search callbackFromParent={this.someFn} maintenancePlans={maintenancePlans}/>
+                            <Search callbackFromParent={this.someFn} emptySearchFromParent={this.emptyInputSearch}
+                                    maintenancePlans={maintenancePlans}/>
                             <MaintenancePlans maintenancePlans={this.getMaintenancePlans()}/>
                         </div>
                     </div>
