@@ -106,7 +106,7 @@ class MachinesList extends Component {
 
     render() {
         const {customerMachines} = this.props;
-        const {name, email, companyEmail, phoneNumber, company, marketSector, city, country, address, numberOfEmployees} = this.props.customers;
+        const {name, email, companyEmail, phoneNumber, company, marketSector, city, country, address, numberOfEmployees} = this.props.customerDetails;
         console.log(this.props.customers);
         return (
             <div>

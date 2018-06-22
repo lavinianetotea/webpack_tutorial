@@ -6,10 +6,8 @@ class Customers extends Component {
 
         this.state = {
             customerProducts: [],
-            customerDetails: {
-
-            }
-        };
+            customerDetails: null
+        }
     }
 
     getCustomerProducts(products) {
@@ -17,12 +15,18 @@ class Customers extends Component {
         this.props.displayMachinesFromParent(products);
     }
 
+    getCustomerDetails(customerDetails) {
+        this.setState({customerDetails: customerDetails});
+        this.props.customerDetailsFromParent(customerDetails);
+    }
+
+
     renderTableRows(customers) {
         return customers.map(
             (customer, index) =>
                 <tr key={index} onClick={() => {
                     this.getCustomerProducts(customer.products);
-                    this.getCustomerDetails(customer)
+                    this.getCustomerDetails(customer);
                 }}>
                     <td>{customer.name}</td>
                     <td>{customer.email}</td>

@@ -203,12 +203,14 @@ class MasterCustomers extends Component {
             searchResultsFromSearch: null,
             isInputSearchEmpty: true,
             displayCustomerProducts: [],
-            displayMachineContainer: 'none'
+            displayMachineContainer: 'none',
+            customerDetails: {}
         };
 
         this.someFn = this.someFn.bind(this);
         this.emptyInputSearch = this.emptyInputSearch.bind(this);
         this.displayMachines = this.displayMachines.bind(this);
+        this.customerDetails = this.customerDetails.bind(this);
     }
 
     someFn(dataCollectionFromChild) {
@@ -227,6 +229,10 @@ class MasterCustomers extends Component {
         }
     }
 
+    customerDetails(customerDetailsFromChild) {
+        this.setState({customerDetails: customerDetailsFromChild});
+    }
+
     getCustomers() {
         return this.state.searchResultsFromSearch === null || this.state.isInputSearchEmpty === true ? this.state.customers : this.state.searchResultsFromSearch;
     }
@@ -243,9 +249,12 @@ class MasterCustomers extends Component {
                             <Search callbackFromParent={this.someFn} emptySearchFromParent={this.emptyInputSearch}
                                     customers={customers}/>
                             <Customers customers={this.getCustomers()}
-                                       displayMachinesFromParent={this.displayMachines}/>
+                                       displayMachinesFromParent={this.displayMachines}
+                                       customerDetailsFromParent={this.customerDetails}/>
                             <div style={{display: this.state.displayMachineContainer}}>
-                                <MachinesList customers={customers} customerMachines={this.state.displayCustomerProducts}/>
+                                <MachinesList customers={customers}
+                                              customerMachines={this.state.displayCustomerProducts}
+                                              customerDetails={this.state.customerDetails}/>
                             </div>
                         </div>
                     </div>
