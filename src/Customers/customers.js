@@ -20,6 +20,8 @@ class Customers extends Component {
         this.props.customerDetailsFromParent(customerDetails);
     }
 
+    //git push for cristi
+
 
     renderTableRows(customers) {
         return customers.map(
